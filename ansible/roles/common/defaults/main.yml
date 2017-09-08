@@ -1,0 +1,18 @@
+hosts: [
+  { host_ip: "10.100.193.200", host_name: "cd"},
+  { host_ip: "10.100.193.201", host_name: "swarm-1"},
+  { host_ip: "10.100.193.202", host_name: "swarm-2"},
+  { host_ip: "10.100.193.203", host_name: "swarm-3"},
+  { host_ip: "10.100.193.204", host_name: "swarm-4"},
+  { host_ip: "10.100.193.205", host_name: "swarm-5"}
+]
+ 
+
+
+obsolete_services:
+  - puppet
+  - chef-client
+
+centos_files: [
+     { src: "centos.sshd_config", dest: "/etc/ssh/sshd_config" },
+  ]

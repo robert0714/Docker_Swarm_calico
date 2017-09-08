@@ -1,0 +1,13 @@
+---
+
+- name: retrieve swarm manager token
+  command: docker swarm join-token -q manager
+  register:  docker_swarm_worker_token 
+  tags: [swarm]
+
+ 
+
+- name: retrieve swarm worker token
+  shell: docker swarm join-token -q worker
+  register: swarm_worker_token
+  tags: [swarm]

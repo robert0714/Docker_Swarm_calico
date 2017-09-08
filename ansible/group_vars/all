@@ -1,0 +1,9 @@
+# centos的{{ ansible_eth1.ipv4.address }}確實可以動態抓到所登入機器的ip ,Ubuntu無法使用，只能用 "{{ facter_ipaddress_eth1 }}"是否能使用
+ip:  "{{ facter_ipaddress_eth1 }}"
+debian_version: trusty
+docker_cfg: docker.cfg
+docker_cfg_dest: /etc/default/docker
+jenkins_version: 2.60.2
+sonarqube_version: 6.5
+docker_network_name: sonarnet
+

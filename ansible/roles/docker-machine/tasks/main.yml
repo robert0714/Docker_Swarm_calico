@@ -1,0 +1,5 @@
+- name: Docaker-Machine is present    
+  shell: " curl -L https://github.com/docker/machine/releases/download/v{{ docker_machine_version }}/docker-machine-`uname -s`-`uname -m` >/tmp/docker-machine && \
+           chmod +x /tmp/docker-machine &&  sudo cp /tmp/docker-machine /usr/local/bin/docker-machine "
+  ignore_errors: yes
+  tags: [docker-machine]

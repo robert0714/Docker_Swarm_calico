@@ -1,0 +1,7 @@
+---
+- name: restart docker
+  systemd:
+    name: docker
+    state: restarted
+    enabled: true
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'

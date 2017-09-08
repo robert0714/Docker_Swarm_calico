@@ -1,0 +1,19 @@
+- hosts: swarm
+  remote_user: vagrant
+  serial: 1
+  roles:
+    - common
+    - docker
+    - swarm
+
+# - hosts: swarm-master
+#   remote_user: vagrant
+#   serial: 1
+#   roles:
+#     - swarm
+
+# - hosts: swarm-worker
+#   remote_user: vagrant
+#   serial: 1
+#   roles:
+#     - swarm
