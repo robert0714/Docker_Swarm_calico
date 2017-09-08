@@ -3,8 +3,9 @@
   serial: 1
   roles:
     - common
-    - docker
-    - swarm
+    # - docker
+    # - swarm
+    - etcd
 
 # - hosts: swarm-master
 #   remote_user: vagrant
