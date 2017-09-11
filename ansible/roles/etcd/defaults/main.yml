@@ -1,15 +1,6 @@
 files: [
-  {src: 'etcd', dest: '/usr/local/bin/etcd'},
-  {src: 'etcdctl', dest: '/usr/local/bin/etcdctl'}
+  {src: 'etcd', dest: '/usr/bin/etcd'},
+  {src: 'etcdctl', dest: '/usr/bin/etcdctl'}
 ]
 
 cl_token: serv-disc-cluster
-cl_node_01_addr: http://192.168.57.41:2380
-cl_node_01_name: serv-disc-01
-cl_node_01: "{{ cl_node_01_name }}={{ cl_node_01_addr }}"
-cl_node_02_addr: http://192.168.57.42:2380
-cl_node_02_name: serv-disc-02
-cl_node_02: "{{ cl_node_02_name }}={{ cl_node_02_addr }}"
-cl_node_03_addr: http://192.168.57.43:2380
-cl_node_03_name: serv-disc-03
-cl_node_03: "{{ cl_node_03_name }}={{ cl_node_03_addr }}"
