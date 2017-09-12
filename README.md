@@ -8,16 +8,22 @@ https://docs.projectcalico.org/v2.5/getting-started/docker/installation/requirem
 ## Reference
 ### Test etcd
 ```
- add value
+ 1.check version
+ curl -L http://10.100.193.201:2379/version
+ curl -L http://10.100.193.202:2379/version
+ curl -L http://10.100.193.203:2379/version
+ curl -L http://10.100.193.204:2379/version
+ curl -L http://10.100.193.205:2379/version
+ 
+ 2.add value
  curl http://10.100.193.201:2379/v2/keys/test  -X  PUT  -d  value="works"  | jq  '.'
  
- check value
+ 3.check value
  curl http://10.100.193.202:2379/v2/keys/test    | jq  '.'
  curl http://10.100.193.203:2379/v2/keys/test    | jq  '.'
  curl http://10.100.193.204:2379/v2/keys/test    | jq  '.'
  curl http://10.100.193.205:2379/v2/keys/test    | jq  '.'
- 
- 
+  
 ```
 
 etcd startup on swarm-1 (10.100.193.201)
