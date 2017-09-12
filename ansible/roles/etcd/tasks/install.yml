@@ -34,23 +34,23 @@
     msg: "  {{ cl_nodes }} "   
   tags: [etcd]
 
-# - name: Is running
-#   become: true
-#   become_user: root 
-#   shell: 
-#      "  nohup  etcd  --name {{ ansible_hostname }} \
-#      --initial-advertise-peer-urls  http://{{ host_ip }}:2380 \
-#      --listen-peer-urls  http://{{ host_ip }}:2380 \
-#      --listen-client-urls  http://{{ host_ip }}:2379,http://127.0.0.1:2379 \
-#      --advertise-client-urls  http://{{ host_ip }}:2379 \
-#      --initial-cluster-token {{ cl_token }} \
-#      --initial-cluster  {{ cl_nodes }} \
-#      --initial-cluster-state new \
-#      > /var/log/etcd.log 2>&1 &  "
-#   tags: [etcd]
-
-- name: etcd service is restarted
-  service:
-    name: etcd
-    state: restarted
+- name: Is running
+  become: true
+  become_user: root 
+  shell: 
+     "  nohup  etcd  --name {{ ansible_hostname }} \
+     --initial-advertise-peer-urls  http://{{ host_ip }}:2380 \
+     --listen-peer-urls  http://{{ host_ip }}:2380 \
+     --listen-client-urls  http://{{ host_ip }}:2379,http://127.0.0.1:2379 \
+     --advertise-client-urls  http://{{ host_ip }}:2379 \
+     --initial-cluster-token {{ cl_token }} \
+     --initial-cluster  {{ cl_nodes }} \
+     --initial-cluster-state new \
+     > /var/log/etcd.log 2>&1 &  "
   tags: [etcd]
+
+# - name: etcd service is restarted
+#   service:
+#     name: etcd
+#     state: restarted
+#   tags: [etcd]
