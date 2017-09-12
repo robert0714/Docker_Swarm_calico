@@ -108,3 +108,7 @@ https://docs.docker.com/engine/extend/plugins_network/
 Docker 1.12 adds support for cluster management and orchestration called swarm mode. Docker Engine running in swarm mode currently <strong> only supports the built-in overlay driver for networking </strong> . Therefore existing networking plugins will not work in swarm mode.
 
 When you run Docker Engine outside of swarm mode, all networking plugins that worked in Docker 1.11 will continue to function normally. They do not require any modification.
+
+## Reference
+http://chunqi.li/2015/11/09/docker-multi-host-networking/
+
