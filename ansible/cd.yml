@@ -3,4 +3,6 @@
   serial: 1
   roles:
     - common 
+    - docker
+    - registry
 
