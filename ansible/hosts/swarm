@@ -8,5 +8,5 @@
 10.100.193.205
 
 [swarm]
-10.100.193.20[1:3]  swarm_master=true  swarm_master_ip=10.100.193.201   cl_nodes="swarm-1=http://10.100.193.201:2380,swarm-2=http://10.100.193.202:2380,swarm-3=http://10.100.193.203:2380,swarm-4=http://10.100.193.204:2380,swarm-5=http://10.100.193.205:2380"
-10.100.193.20[4:5]  swarm_master_ip=10.100.193.201     cl_nodes="swarm-1=http://10.100.193.201:2380,swarm-2=http://10.100.193.202:2380,swarm-3=http://10.100.193.203:2380,swarm-4=http://10.100.193.204:2380,swarm-5=http://10.100.193.205:2380"
+10.100.193.20[1:3]  swarm_master=true  swarm_master_ip=10.100.193.201   centos_docker_cfg=centos-swarm-etcd.service  cl_nodes="swarm-1=http://10.100.193.201:2380,swarm-2=http://10.100.193.202:2380,swarm-3=http://10.100.193.203:2380,swarm-4=http://10.100.193.204:2380,swarm-5=http://10.100.193.205:2380"
+10.100.193.20[4:5]  swarm_master_ip=10.100.193.201   centos_docker_cfg=centos-swarm-etcd.service  cl_nodes="swarm-1=http://10.100.193.201:2380,swarm-2=http://10.100.193.202:2380,swarm-3=http://10.100.193.203:2380,swarm-4=http://10.100.193.204:2380,swarm-5=http://10.100.193.205:2380"

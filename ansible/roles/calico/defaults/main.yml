@@ -1,0 +1,2 @@
+calico_node_ver: "v2.5.1"
+calicoctl_url: "https://github.com/projectcalico/calicoctl/releases/download/v1.5.0/calicoctl"

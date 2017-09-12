@@ -3,8 +3,9 @@
   serial: 1
   roles:
     - common
-    # - docker
     - etcd
+    - docker
+    - calico   
     # - swarm
     
 

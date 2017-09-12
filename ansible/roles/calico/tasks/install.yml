@@ -1,0 +1,18 @@
+- name: pull an image
+  docker_image:
+    name: quay.io/calico/node:{{ calico_node_ver }}
+  tags: [calico]
+
+- name: Executable is present
+  get_url:
+    url: "{{ calicoctl_url }}"
+    dest: /usr/bin/calicoctl
+    mode: 0755
+
+
+- name: Is calicoctl running (shell)
+  become: true
+  become_user: root 
+  shell: 
+     " sudo ETCD_ENDPOINTS=http://{{ host_ip }}:2379 calicoctl node run --node-image=quay.io/calico/node:{{ calico_node_ver }}"
+  tags: [calico]
