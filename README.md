@@ -104,7 +104,7 @@ docker run --label org.projectcalico.label.role=database --net net1 --name datab
 # Conclusion
 https://docs.docker.com/engine/extend/plugins_network/
 
-##Network driver plugins and swarm mode
-Docker 1.12 adds support for cluster management and orchestration called swarm mode. Docker Engine running in swarm mode currently <span style="color:red">only supports the built-in overlay driver for networking</style>'. Therefore existing networking plugins will not work in swarm mode.
+## Network driver plugins and swarm mode
+Docker 1.12 adds support for cluster management and orchestration called swarm mode. Docker Engine running in swarm mode currently <span style="color:red">only supports the built-in overlay driver for networking</style> . Therefore existing networking plugins will not work in swarm mode.
 
 When you run Docker Engine outside of swarm mode, all networking plugins that worked in Docker 1.11 will continue to function normally. They do not require any modification.
