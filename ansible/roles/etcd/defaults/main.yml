@@ -1,6 +1,6 @@
 files: [
-  {src: 'etcd', dest: '/usr/bin/etcd'},
-  {src: 'etcdctl', dest: '/usr/bin/etcdctl'}
+  {src: 'etcd.conf.jn2', dest: '/etc/etcd/etcd.conf'},
+  {src: 'etcd.service.jn2', dest: '/usr/lib/systemd/system/etcd.service'}
 ]
 
 cl_token: etcd-cluster 
