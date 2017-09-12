@@ -6,5 +6,5 @@ files: [
      { src: "calico.env", dest: "/etc/calico/calico.env" }
   ]
 
-calico_cfg: calico.service.jn2
-calico_cfg_dest: /usr/lib/systemd/system/calico.service
+calico_cfg: calico-node.service.jn2
+calico_cfg_dest: /usr/lib/systemd/system/calico-node.service

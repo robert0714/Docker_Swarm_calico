@@ -20,6 +20,10 @@
 
 
 ### Below is Calico service
+- name: Calico dirctory are copied
+  file: path=/etc/calico/  state=directory mode=0755
+  ignore_errors: yes
+  tags: [calico]
 
 - name: Calico environment files are copied
   copy:
