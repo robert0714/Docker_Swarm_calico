@@ -1,2 +1,10 @@
 calico_node_ver: "v2.5.1"
 calicoctl_url: "https://github.com/projectcalico/calicoctl/releases/download/v1.5.0/calicoctl"
+
+files: [
+     # { src: "docker.centos.repo", dest: "/etc/yum.repos.d/docker.repo" },
+     { src: "calico.env", dest: "/etc/calico/calico.env" }
+  ]
+
+calico_cfg: calico.service.jn2
+calico_cfg_dest: /usr/lib/systemd/system/calico.service

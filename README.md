@@ -89,3 +89,14 @@ ExecStop=-/usr/bin/docker stop calico-node
 [Install]
 WantedBy=multi-user.target
 ```
+###  Create the Docker network
+```
+docker network create --driver calico --ipam-driver calico-ipam net1
+```
+
+###  Create the Labeled Workload
+```
+docker run --label org.projectcalico.label.role=frontend --net net1 --name frontend-A -tid busybox
+
+docker run --label org.projectcalico.label.role=database --net net1 --name database-A -tid busybox
+```
