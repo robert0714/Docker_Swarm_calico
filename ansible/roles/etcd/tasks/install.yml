@@ -1,9 +1,15 @@
-- name: Files are copied
-  copy:
-    src: "{{ item.src }}"
-    dest: "{{ item.dest }}"
-    mode: 0755
-  with_items: "{{ files }}"
+- name: etcd is present
+  apt:
+    name: etcd
+    state: present
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+  tags: [etcd]
+
+- name: etcd is present
+  yum:
+    name: etcd
+    state: present
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
   tags: [etcd]
 
 - name: show hostname
