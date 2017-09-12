@@ -3,4 +3,4 @@ files: [
   {src: 'etcdctl', dest: '/usr/bin/etcdctl'}
 ]
 
-cl_token: serv-disc-cluster
+cl_token: etcd-cluster 
