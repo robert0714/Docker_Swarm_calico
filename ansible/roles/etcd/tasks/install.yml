@@ -19,6 +19,10 @@
   with_items: "{{ files }}"
   tags: [etcd]
 
+- name: etcd Daemon is reloaded
+  command: systemctl daemon-reload
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+  tags: [etcd]
 
 - name: show hostname
   debug:
