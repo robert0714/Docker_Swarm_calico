@@ -53,4 +53,5 @@
   service:
     name: etcd
     state: started
+  ignore_errors: yes
   tags: [etcd]
