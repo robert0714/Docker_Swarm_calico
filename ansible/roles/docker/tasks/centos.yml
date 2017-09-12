@@ -73,10 +73,10 @@
   when: is_systemd is defined
   tags: [docker]
 
-- name: CentOS service is running
+- name: CentOS service is started
   service:
     name: docker
-    state: running
+    state: started
   tags: [docker]
 
 - name: vagrant user is added to the docker group
@@ -86,7 +86,7 @@
   register: user_result
   tags: [docker]
  
-- name: DockerUI is running
+- name: DockerUI is started
   docker_container:
     restart_policy: always
     image: uifd/ui-for-docker
