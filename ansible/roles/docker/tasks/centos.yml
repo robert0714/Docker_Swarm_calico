@@ -70,7 +70,6 @@
 
 - name: Centos Daemon is reloaded
   command: systemctl daemon-reload
-  when: is_systemd is defined
   tags: [docker]
 
 - name: CentOS service is started

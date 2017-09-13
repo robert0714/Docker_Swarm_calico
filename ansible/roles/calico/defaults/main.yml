@@ -2,10 +2,10 @@ calico_node_ver: "v2.5.1"
 calicoctl_url: "https://github.com/projectcalico/calicoctl/releases/download/v1.5.0/calicoctl"
 
 files: [
-     # { src: "docker.centos.repo", dest: "/etc/yum.repos.d/docker.repo" },
-     { src: "calico.env", dest: "/etc/calico/calico.env" }
+     { src: "calico-node.service.jn2", dest: "/usr/lib/systemd/system/calico-node.service" },
+     { src: "calico.env.jn2", dest: "/etc/calico/calico.env" }
   ]
 
-calico_cfg: calico-node.service.jn2
-calico_cfg_dest: /usr/lib/systemd/system/calico-node.service
+# calico_cfg: calico-node.service.jn2
+# calico_cfg_dest: /usr/lib/systemd/system/calico-node.service
 calico_node_image: 192.168.57.29:5000/quay.io/calico/node

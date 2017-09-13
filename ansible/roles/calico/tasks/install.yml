@@ -1,6 +1,6 @@
 - name: pull an image
   docker_image:
-    name: {{ calico_node_image }}:{{ calico_node_ver }}
+    name: "{{ calico_node_image }}:{{ calico_node_ver }}"
   tags: [calico]
 
 - name: Executable is present
@@ -16,6 +16,7 @@
 #   become_user: root 
 #   shell: 
 #      " sudo ETCD_ENDPOINTS=http://{{ host_ip }}:2379 calicoctl node run --node-image=quay.io/calico/node:{{ calico_node_ver }}"
+         # sudo ETCD_ENDPOINTS=http://10.100.193.201:2379 calicoctl node run --node-image=192.168.57.29:5000/quay.io/calico/node:v2.5.1
 #   tags: [calico]
 
 
@@ -26,17 +27,21 @@
   tags: [calico]
 
 - name: Calico environment files are copied
-  copy:
+  template:
     src: "{{ item.src }}"
     dest: "{{ item.dest }}"
   with_items: "{{ files }}"
   tags: [calico]
 
-- name: Calico-node service files are present
-  template:
-    src: "{{ calico_cfg }}"
-    dest: "{{ calico_cfg_dest }}"
+- name: Centos Daemon is reloaded
+  command: systemctl daemon-reload
   tags: [calico]
+
+# - name: Calico-node service files are present
+#   template:
+#     src: "{{ calico_cfg }}"
+#     dest: "{{ calico_cfg_dest }}"
+#   tags: [calico]
 
 - name: enable calico-node
   service:
