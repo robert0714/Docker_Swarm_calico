@@ -29,9 +29,9 @@
     msg: "  {{ cl_nodes }} "   
   tags: [etcd]
 
-- name: show hostname
-  debug:
-    msg: "  {{ cl_nodes }} "   
+- name: CentOS dirctory are copied
+  file: path=/var/lib/etcd/ state=directory mode=0755
+  ignore_errors: yes 
   tags: [etcd]
 
 # - name: Is running
@@ -46,6 +46,7 @@
 #      --initial-cluster-token {{ cl_token }} \
 #      --initial-cluster  {{ cl_nodes }} \
 #      --initial-cluster-state new \
+#      --data-dir /var/lib/etcd/default.etcd \
 #      > /var/log/etcd.log 2>&1 &  "
 #   tags: [etcd]
 
