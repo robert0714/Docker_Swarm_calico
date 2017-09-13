@@ -1,7 +1,9 @@
-# SWARM
-swarm-master
+# Etcd
+
+After making etcd environment , we can prepare   calico environment
 ```
-ansible-playbook /vagrant/ansible/swarm.yml  -i /vagrant/ansible/hosts/swarm
+ansible-playbook /vagrant/ansible/swarm.yml  -i /vagrant/ansible/hosts/etcd
+ansible-playbook /vagrant/ansible/swarm.yml  -i /vagrant/ansible/hosts/calico
 ```
 https://docs.projectcalico.org/v2.5/getting-started/docker/installation/requirements
 
