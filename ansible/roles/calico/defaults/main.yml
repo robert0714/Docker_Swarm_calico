@@ -8,3 +8,4 @@ files: [
 
 calico_cfg: calico-node.service.jn2
 calico_cfg_dest: /usr/lib/systemd/system/calico-node.service
+calico_node_image: 192.168.57.29:5000/quay.io/calico/node

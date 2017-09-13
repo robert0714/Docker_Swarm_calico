@@ -1,6 +1,6 @@
 - name: pull an image
   docker_image:
-    name: quay.io/calico/node:{{ calico_node_ver }}
+    name: {{ calico_node_image }}:{{ calico_node_ver }}
   tags: [calico]
 
 - name: Executable is present

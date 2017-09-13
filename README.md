@@ -1,6 +1,6 @@
 # Etcd
-
-After making etcd environment , we can prepare   calico environment
+Making etcd cluster , we need to wait the latest node startup
+Only after making up  etcd environment , we can prepare   calico environment
 ```
 ansible-playbook /vagrant/ansible/etcd.yml  -i /vagrant/ansible/hosts/swarm
 ansible-playbook /vagrant/ansible/calico.yml  -i /vagrant/ansible/hosts/swarm
